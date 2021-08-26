@@ -14,10 +14,10 @@ export class Customer extends EntityBase {
     customerType: CustomerType;
 
     @Column()
-    document: string;
+    document?: string;
 
     @Column()
-    documentType: DocumentType;
+    documentType?: DocumentType;
 
     @OneToMany(() => Phone, p => p.customer)
     phones?: Phone[];
