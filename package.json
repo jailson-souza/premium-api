@@ -7,15 +7,15 @@
     "url": "https://github.com/JaySou/premium-api.git"
   },
   "scripts": {
-    "start": "nodemon",
-    "start:prod": "node -r module-alias/register -r dotenv/config ./dist/server.js dotenv_config_path=./config/.env",
+    "start:dev": "nodemon",
+    "start": "node -r module-alias/register -r dotenv/config ./dist/server.js dotenv_config_path=./config/.env",
     "test": "jest --coverage --detectOpenHandles",
     "lint": "eslint . --ext .ts",
     "fix-lint": "eslint . --ext .ts --fix",
     "rimraf-dist": "rimraf dist",
     "build": "npm run rimraf-dist && tsc --build",
     "seed": "node -r module-alias/register dist/seed.js",
-    "postinstall": "npm run build && npm run start:prod"
+    "postinstall": "npm run build"
   },
   "_moduleAliases": {
     "@api": "dist/api",
