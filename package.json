@@ -14,7 +14,8 @@
     "fix-lint": "eslint . --ext .ts --fix",
     "rimraf-dist": "rimraf dist",
     "build": "npm run rimraf-dist && tsc --build",
-    "seed": "node -r module-alias/register dist/seed.js"
+    "seed": "node -r module-alias/register dist/seed.js",
+    "postinstall": "npm run build && npm run start:prod"
   },
   "_moduleAliases": {
     "@api": "dist/api",
