@@ -7,7 +7,8 @@
     "url": "https://github.com/JaySou/premium-api.git"
   },
   "engines": {
-    "node": "14.17.3"
+    "node": "^14.17.3",
+    "npm": "^7.20.5"
   },
   "scripts": {
     "start:dev": "nodemon",
@@ -15,8 +16,7 @@
     "test": "jest --coverage --detectOpenHandles",
     "lint": "eslint . --ext .ts",
     "fix-lint": "eslint . --ext .ts --fix",
-    "rimraf-dist": "rimraf dist",
-    "build": "npm run rimraf-dist && tsc --build",
+    "build": "tsc",
     "seed": "node -r module-alias/register dist/seed.js"
   },
   "_moduleAliases": {
