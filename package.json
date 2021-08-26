@@ -11,7 +11,7 @@
     "npm": "^7.20.5"
   },
   "scripts": {
-    "start:dev": "nodemon",
+    "dev": "nodemon",
     "start": "node -r module-alias/register -r dotenv/config ./dist/server.js dotenv_config_path=./config/.env",
     "test": "jest --coverage --detectOpenHandles",
     "lint": "eslint . --ext .ts",
@@ -89,8 +89,5 @@
       "pre-commit": "npm run lint",
       "pre-push": "npm test"
     }
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
   }
 }

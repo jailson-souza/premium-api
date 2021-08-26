@@ -1,7 +1,16 @@
 import { createConnection } from "typeorm";
+import container from "@container";
+import { LoggerInterface } from "@util/interface/logger-interface";
+
+const logger: LoggerInterface = container.resolve("logger");
 
 const connectionDatabase = async () => {
-    await createConnection().then(_ => console.log("connection created in database"));
+    await createConnection()
+        .then(_ => logger.info("connection created in database"))
+        .catch(err => {
+            logger.error("connection database failed error", { err });
+            process.exit();
+        });
 };
 
 export default connectionDatabase;
