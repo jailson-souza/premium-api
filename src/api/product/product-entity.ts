@@ -5,4 +5,13 @@ import { Column, Entity } from "typeorm";
 export class Product extends EntityBase {
     @Column()
     name: string;
+
+    @Column()
+    description?: string;
+
+    @Column()
+    barCode?: string;
+
+    
+
 }
