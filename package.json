@@ -6,6 +6,9 @@
   "repository": {
     "url": "https://github.com/JaySou/premium-api.git"
   },
+  "engines": {
+    "node": "14.17.3"
+  },
   "scripts": {
     "start:dev": "nodemon",
     "start": "node -r module-alias/register -r dotenv/config ./dist/server.js dotenv_config_path=./config/.env",
