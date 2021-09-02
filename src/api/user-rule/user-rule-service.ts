@@ -13,7 +13,7 @@ export class UserRuleService extends ServiceBase<UserRule> implements UserRuleSe
     }
 
     async create(rule: UserRule): Promise<UserRule> {
-        rule.ruleCode = `${rule.module}-${rule.action}`;
+        rule.ruleCode = `${rule.action.toLowerCase()}-${rule.module}`;
         const ruleExists = await this.userRuleRepository.getRuleByRuleCode(rule.ruleCode);
         if (ruleExists) {
             throw new ErrorUtil.RecordAlreadyExistError("Já existe uma regra com esses parametros", { ruleExists });

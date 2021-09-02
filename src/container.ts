@@ -18,11 +18,13 @@ import { PhoneRepository } from "@api/phone/phone-repository";
 import { LogService } from "@api/log/log-service";
 import { CustomerService } from "@api/customer/customer-service";
 import { CustomerRepository } from "@api/customer/customer-repository";
+import { ProductGroupService } from "@api/product-group/product-group-service";
+import { ProductGroupRepository } from "@api/product-group/product-group-repository";
 
 const definition = {
     // util
     logger: asClass(Logger).singleton(),
-
+    
     // service
     authService: asClass(AuthService).singleton(),
     userRuleService: asClass(UserRuleService).singleton(),
@@ -33,6 +35,7 @@ const definition = {
     userGroupService: asClass(UserGroupService).singleton(),
     logService: asClass(LogService).singleton(),
     customerService: asClass(CustomerService).singleton(),
+    productGroupService: asClass(ProductGroupService).singleton(),
 
     // repository
     authRepository: asClass(AuthRepository).singleton(),
@@ -44,6 +47,7 @@ const definition = {
     userGroupRepository: asClass(UserGroupRepository).singleton(),
     phoneRepository: asClass(PhoneRepository).singleton(),
     customerRepository: asClass(CustomerRepository).singleton(),
+    productGroupRepository: asClass(ProductGroupRepository).singleton(),
 };
 
 const container = createContainer().register(definition);
