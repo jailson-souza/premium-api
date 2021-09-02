@@ -4,12 +4,11 @@ import path from "path";
 import { RuleAction } from "@api/user-rule/enum/rule-action-enum";
 import { UserRule } from "@api/user-rule/user-rule-entity";
 import { UserRuleRepositoryInterface } from "@api/user-rule/interface/user-rule-repository-interface";
-import container from "@container";
 import { noSeedRuleModule } from "@util/constant/white-list";
+import container from "@container";
 export default class UserRuleSeed {
     private userRuleRepository: UserRuleRepositoryInterface;
     constructor() {
-        console.log("run seed UserRuleSeed");
         this.userRuleRepository = container.resolve("userRuleRepository");
     }
 
@@ -37,6 +36,7 @@ export default class UserRuleSeed {
     }
 
     public async init(): Promise<void> {
+        console.log("run seed UserRuleSeed");
         this.loadData().forEach(async rule => {
             const ruleExists = await this.userRuleRepository.getRuleByRuleCode(rule.ruleCode);
             if (!ruleExists) {
