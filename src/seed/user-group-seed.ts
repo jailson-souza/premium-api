@@ -1,16 +1,15 @@
-import { UserGroupRepositoryInterface } from "@api/user-group/interface/user-group-repository-interface";
-import { UserRuleRepositoryInterface } from "@api/user-rule/interface/user-rule-repository-interface";
+import _ from "lodash";
 import container from "@container";
 import { ErrorUtil } from "@util/error";
-import _ from "lodash";
+import { UserGroupRepositoryInterface } from "@api/user-group/interface/user-group-repository-interface";
+import { UserRuleRepositoryInterface } from "@api/user-rule/interface/user-rule-repository-interface";
 
 export default class UserGroupSeed {
     private userGroupRepository: UserGroupRepositoryInterface;
     private userRuleRepository: UserRuleRepositoryInterface;
     constructor() {
-        console.log("run seed UserGroupSeed");
         this.userGroupRepository = container.resolve("userGroupRepository");
-        this.userRuleRepository = container.resolve("userRuleRepository");
+        this.userRuleRepository =  container.resolve("userRuleRepository");
     }
 
     private async addRules(userGroupId: number, ruleCodes: string[]): Promise<void> {
@@ -25,8 +24,11 @@ export default class UserGroupSeed {
     }
 
     public async init(): Promise<void> {
+        console.log("run seed UserGroupSeed");
         const groups = await this.userGroupRepository.getAll();
         const names = _.map(groups, group => group.name);
+
+        console.log("names", names)
 
         const rules = await this.userRuleRepository.getAll();
         const ruleCodes = rules.map(rule => rule.ruleCode);
@@ -48,5 +50,3 @@ export default class UserGroupSeed {
         });
     }
 }
-
-new UserGroupSeed().init();

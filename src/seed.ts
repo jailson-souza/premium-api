@@ -5,6 +5,6 @@ import UserGroupSeed from "@seed/user-group-seed";
 const seed = async () => {
     await connectionDatabase();
     await new UserRuleSeed().init();
-    await new UserGroupSeed().init();
+    await new UserGroupSeed().init()
 };
 seed();

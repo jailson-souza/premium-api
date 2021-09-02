@@ -5,7 +5,7 @@
             "type": "node-terminal",
             "name": "Debug Local",
             "request": "launch",
-            "command": "npm run dev",
+            "command": "npm run build && npm run seed",
             "cwd": "${workspaceFolder}",
             "skipFiles": [
                 "<node_internals>/**",
