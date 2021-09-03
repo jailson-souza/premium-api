@@ -27,4 +27,6 @@ export class User extends EntityBase {
     @ManyToOne(() => UserGroup, g => g.user)
     @JoinColumn()
     userGroup?: UserGroup;
+
+    
 }
