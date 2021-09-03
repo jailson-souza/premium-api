@@ -1,7 +1,8 @@
 import { EntityBase } from "@api/base/entity-base";
 import { ProductGroup } from "@api/product-group/product-group-entity";
-import { Column, Entity, ManyToOne, JoinColumn } from "typeorm";
+import { Column, Entity, ManyToOne, JoinColumn, Double } from "typeorm";
 import { UnitOfMeasurement } from "@api/base/enum/unit-of-measurement-enum";
+import { DecimalLiteral } from "@babel/types";
 @Entity()
 export class Product extends EntityBase {
     @Column()
@@ -30,6 +31,17 @@ export class Product extends EntityBase {
     sellWithZeroStock?: boolean;
 
     @Column()
-    
+    minimumStock?: number;
 
+    @Column({ default: '0.00', type: "float" } )
+    costValue: number;
+
+    @Column({ default: '0.00', type: "float" } )
+    saleValue: number;
+
+    @Column({ default: '0.00', type: "float" })
+    termValue: number;
+
+    @Column({ default: '0.00', type: "float" })
+    wholesaleValue: number;
 }
