@@ -27,7 +27,7 @@ export class UserService extends ServiceBase<User> implements UserServiceInterfa
 
         const employee = await this.employeeRepository.getById(user.employeeId);
         if (!employee) {
-            throw new ErrorUtil.PropertyValueInvalidError("Id de funcionario invalido", {
+            throw new ErrorUtil.PropertyValueInvalidError("Id de funcionário inválido", {
                 employeeId: user.employeeId,
             });
         }

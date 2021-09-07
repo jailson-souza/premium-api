@@ -3,6 +3,7 @@ import { EntityBase } from "@api/base/entity-base";
 import { PhoneType } from "./enum/phone-type-enum";
 import { Customer } from "@api/customer/customer-entity";
 import { Company } from "@api/company/company-entity";
+import { Provider } from "@api/provider/provider-entity";
 
 @Entity()
 export class Phone extends EntityBase {
@@ -32,4 +33,7 @@ export class Phone extends EntityBase {
 
     @ManyToOne(() => Company, c => c.phones)
     company?: Company;
+
+    @ManyToOne(() => Provider, c => c.phones)
+    provider?: Provider;
 }

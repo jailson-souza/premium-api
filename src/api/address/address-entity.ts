@@ -1,8 +1,9 @@
-import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, ManyToMany } from "typeorm";
 import { EntityBase } from "@api/base/entity-base";
 import { AddressType } from "./enum/address-type-enum";
 import { Customer } from "@api/customer/customer-entity";
 import { Company } from "@api/company/company-entity";
+import { Provider } from "@api/provider/provider-entity";
 
 @Entity()
 export class Address extends EntityBase {
@@ -46,10 +47,11 @@ export class Address extends EntityBase {
     customerId?: number;
 
     @ManyToOne(() => Customer, c => c.addresses)
-    @JoinColumn()
     customer?: Customer;
 
     @ManyToOne(() => Company, c => c.addresses)
-    @JoinColumn()
     company?: Company;
+
+    @ManyToOne(() => Provider, c => c.addresses)
+    provider?: Provider;
 }

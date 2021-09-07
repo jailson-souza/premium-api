@@ -20,6 +20,7 @@ export class Customer extends EntityBase {
     documentType?: DocumentType;
 
     @OneToMany(() => Phone, p => p.customer)
+    @JoinColumn()
     phones?: Phone[];
 
     @OneToMany(() => Address, a => a.customer)
