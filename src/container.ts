@@ -22,36 +22,42 @@ import { ProductGroupService } from "@api/product-group/product-group-service";
 import { ProductGroupRepository } from "@api/product-group/product-group-repository";
 import { ProductRepository } from "@api/product/product-repository";
 import { ProductService } from "@api/product/product-service";
+import { SalesService } from "@api/sales/sales-service";
+import { ProviderRepository } from "@api/provider/provider-repository";
+import { ProviderService } from "@api/provider/provider-service";
 
 const definition = {
     // util
     logger: asClass(Logger).singleton(),
     
     // service
-    authService: asClass(AuthService).singleton(),
-    userRuleService: asClass(UserRuleService).singleton(),
-    userService: asClass(UserService).singleton(),
-    companyService: asClass(CompanyService).singleton(),
     addressService: asClass(AddressService).singleton(),
-    employeeService: asClass(EmployeeService).singleton(),
-    userGroupService: asClass(UserGroupService).singleton(),
-    logService: asClass(LogService).singleton(),
+    authService: asClass(AuthService).singleton(),
+    companyService: asClass(CompanyService).singleton(),
     customerService: asClass(CustomerService).singleton(),
+    employeeService: asClass(EmployeeService).singleton(),
+    logService: asClass(LogService).singleton(),
     productGroupService: asClass(ProductGroupService).singleton(),
     productService: asClass(ProductService).singleton(),
+    providerService: asClass(ProviderService).singleton(),
+    userGroupService: asClass(UserGroupService).singleton(),
+    userRuleService: asClass(UserRuleService).singleton(),
+    userService: asClass(UserService).singleton(),
 
     // repository
-    authRepository: asClass(AuthRepository).singleton(),
-    userRuleRepository: asClass(UserRuleRepository).singleton(),
-    userRepository: asClass(UserRepository).singleton(),
-    companyRepository: asClass(CompanyRepository).singleton(),
     addressRepository: asClass(AddressRepository).singleton(),
-    employeeRepository: asClass(EmployeeRepository).singleton(),
-    userGroupRepository: asClass(UserGroupRepository).singleton(),
-    phoneRepository: asClass(PhoneRepository).singleton(),
+    authRepository: asClass(AuthRepository).singleton(),
+    companyRepository: asClass(CompanyRepository).singleton(),
     customerRepository: asClass(CustomerRepository).singleton(),
+    employeeRepository: asClass(EmployeeRepository).singleton(),
+    phoneRepository: asClass(PhoneRepository).singleton(),
     productGroupRepository: asClass(ProductGroupRepository).singleton(),
     productRepository: asClass(ProductRepository).singleton(),
+    providerRepository: asClass(ProviderRepository).singleton(), 
+    userGroupRepository: asClass(UserGroupRepository).singleton(),
+    userRepository: asClass(UserRepository).singleton(),
+    userRuleRepository: asClass(UserRuleRepository).singleton(),
+
 };
 
 const container = createContainer().register(definition);

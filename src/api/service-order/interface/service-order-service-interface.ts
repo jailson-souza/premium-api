@@ -1,4 +1,4 @@
-import { ServiceBaseInterface } from "@api/base/interface/service-base-interface";
+import { ServiceBase } from "@api/base/service-base";
 import { ServiceOrder } from "../service-order-entity";
 
-export interface ServiceOrderServiceInterface extends ServiceBaseInterface<ServiceOrder>{}
+export interface ServiceOrderServiceInterface extends ServiceBase<ServiceOrder> {}

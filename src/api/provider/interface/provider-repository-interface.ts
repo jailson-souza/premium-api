@@ -1,4 +1,4 @@
-import { RepositoryBaseInterface } from "@api/base/interface/repository-base-interface";
+import { RepositoryBase } from "@api/base/repository-base";
 import { Provider } from "../provider-entity";
 
-export interface ProviderRepositoryInterface extends RepositoryBaseInterface<Provider>{}
+export interface ProviderRepositoryInterface extends RepositoryBase<Provider>{}

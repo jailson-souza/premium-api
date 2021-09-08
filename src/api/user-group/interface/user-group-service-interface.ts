@@ -1,7 +1,7 @@
-import { ServiceBaseInterface } from "@api/base/interface/service-base-interface";
+import { ServiceBase } from "@api/base/service-base";
 import { UserGroup } from "../user-group-entity";
 
-export interface UserGroupServiceInterface extends ServiceBaseInterface<UserGroup> {
+export interface UserGroupServiceInterface extends ServiceBase<UserGroup> {
     addRule(userGroupId: number, ruleCodes: string[]): Promise<UserGroup>;
     removeRules(userGroupId: number, ruleCodes: string[]): Promise<UserGroup>;
 }

@@ -1,4 +1,4 @@
-import { ServiceBaseInterface } from "@api/base/interface/service-base-interface";
+import { ServiceBase } from "@api/base/service-base";
 import { GeneralConfiguration } from "../general-configuration.entity";
 
-export interface GeneralConfigurationServiceInterface extends ServiceBaseInterface<GeneralConfiguration>{}
+export interface GeneralConfigurationServiceInterface extends ServiceBase<GeneralConfiguration>{}
