@@ -1,4 +1,4 @@
-import { ServiceBase } from "src/api/base/service-base";
+import { ServiceBaseInterface } from "@api/base/interface/service-base-interface";
 import { User } from "@api/user/user-entity";
 
-export interface UserServiceInterface extends ServiceBase<User> {}
+export interface UserServiceInterface extends ServiceBaseInterface<User> {}
