@@ -6,4 +6,3 @@ export class PurchaseController extends ControllerBase<Purchase> {
         super( purchaseService);
     }
 }
-}

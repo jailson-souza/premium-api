@@ -30,6 +30,8 @@ import { ServiceOrderService } from "@api/service-order/service-order-service";
 import { ServiceOrderRepository } from "@api/service-order/service-order-repository";
 import { GeneralConfigurationrRepository } from "@api/general-configuration/general-configuration-repository";
 import { GeneralConfigurationService } from "@api/general-configuration/general-configuration-service";
+import { PurchaseService } from "@api/purchase/purchase-service";
+import { PurchaseRepository } from "@api/purchase/purchase-repository";
 
 const definition = {
     // util
@@ -46,6 +48,7 @@ const definition = {
     productGroupService: asClass(ProductGroupService).singleton(),
     productService: asClass(ProductService).singleton(),
     providerService: asClass(ProviderService).singleton(),
+    purchaseService: asClass(PurchaseService).singleton(),
     saleService: asClass(SaleService).singleton(),
     serviceOrderService: asClass(ServiceOrderService).singleton(),
     userGroupService: asClass(UserGroupService).singleton(),
@@ -63,6 +66,7 @@ const definition = {
     productGroupRepository: asClass(ProductGroupRepository).singleton(),
     productRepository: asClass(ProductRepository).singleton(),
     providerRepository: asClass(ProviderRepository).singleton(), 
+    purchaseRepository: asClass(PurchaseRepository).singleton(),
     saleRepository: asClass(SaleRepository).singleton(),
     serviceOrderRepository: asClass(ServiceOrderRepository).singleton(),
     userGroupRepository: asClass(UserGroupRepository).singleton(),
