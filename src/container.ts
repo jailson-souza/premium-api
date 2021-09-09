@@ -22,9 +22,14 @@ import { ProductGroupService } from "@api/product-group/product-group-service";
 import { ProductGroupRepository } from "@api/product-group/product-group-repository";
 import { ProductRepository } from "@api/product/product-repository";
 import { ProductService } from "@api/product/product-service";
-import { SalesService } from "@api/sales/sales-service";
+import { SaleService } from "@api/sale/sale-service";
 import { ProviderRepository } from "@api/provider/provider-repository";
 import { ProviderService } from "@api/provider/provider-service";
+import { SaleRepository } from "@api/sale/sale-repository";
+import { ServiceOrderService } from "@api/service-order/service-order-service";
+import { ServiceOrderRepository } from "@api/service-order/service-order-repository";
+import { GeneralConfigurationrRepository } from "@api/general-configuration/general-configuration-repository";
+import { GeneralConfigurationService } from "@api/general-configuration/general-configuration-service";
 
 const definition = {
     // util
@@ -36,10 +41,13 @@ const definition = {
     companyService: asClass(CompanyService).singleton(),
     customerService: asClass(CustomerService).singleton(),
     employeeService: asClass(EmployeeService).singleton(),
+    generalConfigurationService: asClass(GeneralConfigurationService).singleton(),
     logService: asClass(LogService).singleton(),
     productGroupService: asClass(ProductGroupService).singleton(),
     productService: asClass(ProductService).singleton(),
     providerService: asClass(ProviderService).singleton(),
+    saleService: asClass(SaleService).singleton(),
+    serviceOrderService: asClass(ServiceOrderService).singleton(),
     userGroupService: asClass(UserGroupService).singleton(),
     userRuleService: asClass(UserRuleService).singleton(),
     userService: asClass(UserService).singleton(),
@@ -50,10 +58,13 @@ const definition = {
     companyRepository: asClass(CompanyRepository).singleton(),
     customerRepository: asClass(CustomerRepository).singleton(),
     employeeRepository: asClass(EmployeeRepository).singleton(),
+    generalConfigurationRepository: asClass(GeneralConfigurationrRepository).singleton(),
     phoneRepository: asClass(PhoneRepository).singleton(),
     productGroupRepository: asClass(ProductGroupRepository).singleton(),
     productRepository: asClass(ProductRepository).singleton(),
     providerRepository: asClass(ProviderRepository).singleton(), 
+    saleRepository: asClass(SaleRepository).singleton(),
+    serviceOrderRepository: asClass(ServiceOrderRepository).singleton(),
     userGroupRepository: asClass(UserGroupRepository).singleton(),
     userRepository: asClass(UserRepository).singleton(),
     userRuleRepository: asClass(UserRuleRepository).singleton(),

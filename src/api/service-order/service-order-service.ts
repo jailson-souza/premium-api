@@ -3,7 +3,7 @@ import { ServiceOrderServiceInterface } from "./interface/service-order-service-
 import { ServiceOrder } from "./service-order-entity";
 
 export class ServiceOrderService extends ServiceBase<ServiceOrder> implements ServiceOrderServiceInterface{
-    constructor({serviceOrderService }){
+    constructor({ serviceOrderService }){
         super(serviceOrderService);
     }
 }
