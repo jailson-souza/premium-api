@@ -32,6 +32,8 @@ import { GeneralConfigurationrRepository } from "@api/general-configuration/gene
 import { GeneralConfigurationService } from "@api/general-configuration/general-configuration-service";
 import { PurchaseService } from "@api/purchase/purchase-service";
 import { PurchaseRepository } from "@api/purchase/purchase-repository";
+import { FormOfPaymentRepository } from "@api/formofpayment/formofpayment-repository";
+import { FormOfPaymentService } from "@api/formofpayment/formofpayment-service";
 
 const definition = {
     // util
@@ -43,6 +45,7 @@ const definition = {
     companyService: asClass(CompanyService).singleton(),
     customerService: asClass(CustomerService).singleton(),
     employeeService: asClass(EmployeeService).singleton(),
+    formofpaymentService: asClass(FormOfPaymentService).singleton(),
     generalConfigurationService: asClass(GeneralConfigurationService).singleton(),
     logService: asClass(LogService).singleton(),
     productGroupService: asClass(ProductGroupService).singleton(),
@@ -61,6 +64,7 @@ const definition = {
     companyRepository: asClass(CompanyRepository).singleton(),
     customerRepository: asClass(CustomerRepository).singleton(),
     employeeRepository: asClass(EmployeeRepository).singleton(),
+    formofpayment: asClass(FormOfPaymentRepository).singleton(),
     generalConfigurationRepository: asClass(GeneralConfigurationrRepository).singleton(),
     phoneRepository: asClass(PhoneRepository).singleton(),
     productGroupRepository: asClass(ProductGroupRepository).singleton(),
