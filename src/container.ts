@@ -32,8 +32,8 @@ import { GeneralConfigurationrRepository } from "@api/general-configuration/gene
 import { GeneralConfigurationService } from "@api/general-configuration/general-configuration-service";
 import { PurchaseService } from "@api/purchase/purchase-service";
 import { PurchaseRepository } from "@api/purchase/purchase-repository";
-import { FormOfPaymentRepository } from "@api/formofpayment/formofpayment-repository";
-import { FormOfPaymentService } from "@api/formofpayment/formofpayment-service";
+import { FormOfPaymentRepository } from "@api/form-of-payment/form-of-payment-repository";
+import { FormOfPaymentService } from "@api/form-of-payment/form-of-payment-service";
 
 const definition = {
     // util

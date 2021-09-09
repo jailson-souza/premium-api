@@ -1,8 +1,8 @@
 import { ControllerBase } from "@api/base/controller-base";
 import { route } from "awilix-express";
-import { FormOfPayment } from "./formofpayment-entity";
+import { FormOfPayment } from "./form-of-payment-entity";
 
-@route("/formofpayment")
+@route("/form-of-payment")
 export class FormOfPaymentController extends ControllerBase<FormOfPayment>{
     constructor({ formofpaymentService }) {
         super(formofpaymentService);
