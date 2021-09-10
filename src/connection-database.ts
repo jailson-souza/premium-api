@@ -8,7 +8,7 @@ const connectionDatabase = async () => {
     await createConnection()
         .then(_ => logger.info("connection created in database"))
         .catch(err => {
-            logger.error("connection database failed error", { err });
+            logger.error("connection database failed error", { error: err.stack });
             process.exit();
         });
 };
