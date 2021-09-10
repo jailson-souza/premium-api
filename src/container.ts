@@ -35,6 +35,8 @@ import { PurchaseRepository } from "@api/purchase/purchase-repository";
 import { FormOfPaymentRepository } from "@api/form-of-payment/form-of-payment-repository";
 import { FormOfPaymentService } from "@api/form-of-payment/form-of-payment-service";
 import { CostCenter } from "@api/cost-center/cost-center-entity";
+import { FixedAccountService } from "@api/fixed-account/fixed-account-service";
+import { FixedAccountRepository } from "@api/fixed-account/fixed-account-repository";
 
 const definition = {
     // util
@@ -47,6 +49,7 @@ const definition = {
     costcenterService: asClass(CostCenter).singleton(),
     customerService: asClass(CustomerService).singleton(),
     employeeService: asClass(EmployeeService).singleton(),
+    fixedaccountService: asClass(FixedAccountService).singleton(),
     formofpaymentService: asClass(FormOfPaymentService).singleton(),
     generalConfigurationService: asClass(GeneralConfigurationService).singleton(),
     logService: asClass(LogService).singleton(),
@@ -67,6 +70,7 @@ const definition = {
     costcenterRepository: asClass(CostCenter).singleton(),
     customerRepository: asClass(CustomerRepository).singleton(),
     employeeRepository: asClass(EmployeeRepository).singleton(),
+    fixedaccountRepository: asClass(FixedAccountRepository).singleton(),
     formofpayment: asClass(FormOfPaymentRepository).singleton(),
     generalConfigurationRepository: asClass(GeneralConfigurationrRepository).singleton(),
     phoneRepository: asClass(PhoneRepository).singleton(),
