@@ -40,6 +40,8 @@ import { FixedAccountRepository } from "@api/fixed-account/fixed-account-reposit
 import { CostCenterRepository } from "@api/cost-center/cost-center-repository";
 import { CashBoxRepository } from "@api/cash-box/cash-box-repository";
 import { CashBoxService } from "@api/cash-box/cash-box-service";
+import { CashBoxStatementService } from "@api/cash-box-statement/cash-box-statement-service";
+import { CashBoxStatementRepository } from "@api/cash-box-statement/cash-box-statement-repository";
 
 const definition = {
     // util
@@ -49,6 +51,7 @@ const definition = {
     addressService: asClass(AddressService).singleton(),
     authService: asClass(AuthService).singleton(),
     cashboxService: asClass(CashBoxService).singleton(),
+    cashboxstatementService: asClass(CashBoxStatementService).singleton(),
     companyService: asClass(CompanyService).singleton(),
     costcenterService: asClass(CostCenter).singleton(),
     customerService: asClass(CustomerService).singleton(),
@@ -71,6 +74,7 @@ const definition = {
     addressRepository: asClass(AddressRepository).singleton(),
     authRepository: asClass(AuthRepository).singleton(),
     cashboxRepository: asClass(CashBoxRepository).singleton(),
+    cashboxstatementRepository: asClass(CashBoxStatementRepository).singleton(),
     companyRepository: asClass(CompanyRepository).singleton(),
     costcenterRepository: asClass(CostCenterRepository).singleton(),
     customerRepository: asClass(CustomerRepository).singleton(),
