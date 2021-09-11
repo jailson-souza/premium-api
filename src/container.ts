@@ -48,6 +48,8 @@ import { BillsPayService } from "@api/bills-pay/bills-pay-service";
 import { BillsPayRepository } from "@api/bills-pay/bills-pay-repository";
 import { BillsReceiveService } from "@api/bills-receive/bills-receive-service";
 import { BillsReceiveRepository } from "@api/bills-receive/bills-receive-repository";
+import { BankAccountStatementService } from "@api/bank-account-statement/bank-account-statement-service";
+import { BankAccountStatementRepository } from "@api/bank-account-statement/bank-account-statement-repository";
 
 const definition = {
     // util
@@ -57,6 +59,7 @@ const definition = {
     addressService: asClass(AddressService).singleton(),
     authService: asClass(AuthService).singleton(),
     bankaccountService: asClass(BankAccountService).singleton(),
+    bankaccountstatementService: asClass(BankAccountStatementService).singleton(),
     billspayService: asClass(BillsPayService).singleton(),
     billsreceiveService: asClass(BillsReceiveService).singleton(),
     cashboxService: asClass(CashBoxService).singleton(),
@@ -83,6 +86,7 @@ const definition = {
     addressRepository: asClass(AddressRepository).singleton(),
     authRepository: asClass(AuthRepository).singleton(),
     bankaccountRepository: asClass(BankAccountRepository).singleton(),
+    bankaccountstatementRepository: asClass(BankAccountStatementRepository).singleton(),
     billspayRepository: asClass(BillsPayRepository).singleton(),
     billsreceiveRepository: asClass(BillsReceiveRepository).singleton(),
     cashboxRepository: asClass(CashBoxRepository).singleton(),
