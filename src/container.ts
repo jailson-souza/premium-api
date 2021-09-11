@@ -34,7 +34,6 @@ import { PurchaseService } from "@api/purchase/purchase-service";
 import { PurchaseRepository } from "@api/purchase/purchase-repository";
 import { FormOfPaymentRepository } from "@api/form-of-payment/form-of-payment-repository";
 import { FormOfPaymentService } from "@api/form-of-payment/form-of-payment-service";
-import { CostCenter } from "@api/cost-center/cost-center-entity";
 import { FixedAccountService } from "@api/fixed-account/fixed-account-service";
 import { FixedAccountRepository } from "@api/fixed-account/fixed-account-repository";
 import { CostCenterRepository } from "@api/cost-center/cost-center-repository";
@@ -42,6 +41,9 @@ import { CashBoxRepository } from "@api/cash-box/cash-box-repository";
 import { CashBoxService } from "@api/cash-box/cash-box-service";
 import { CashBoxStatementService } from "@api/cash-box-statement/cash-box-statement-service";
 import { CashBoxStatementRepository } from "@api/cash-box-statement/cash-box-statement-repository";
+import { BankAccountService } from "@api/bank-account/bank-account-service";
+import { CostCenterService } from "@api/cost-center/cost-center-service";
+import { BankAccountRepository } from "@api/bank-account/bank-account-repository";
 
 const definition = {
     // util
@@ -50,10 +52,11 @@ const definition = {
     // service
     addressService: asClass(AddressService).singleton(),
     authService: asClass(AuthService).singleton(),
+    bankaccountService: asClass(BankAccountService).singleton(),
     cashboxService: asClass(CashBoxService).singleton(),
     cashboxstatementService: asClass(CashBoxStatementService).singleton(),
     companyService: asClass(CompanyService).singleton(),
-    costcenterService: asClass(CostCenter).singleton(),
+    costcenterService: asClass(CostCenterService).singleton(),
     customerService: asClass(CustomerService).singleton(),
     employeeService: asClass(EmployeeService).singleton(),
     fixedaccountService: asClass(FixedAccountService).singleton(),
@@ -73,6 +76,7 @@ const definition = {
     // repository
     addressRepository: asClass(AddressRepository).singleton(),
     authRepository: asClass(AuthRepository).singleton(),
+    bankaccountRepository: asClass(BankAccountRepository).singleton(),
     cashboxRepository: asClass(CashBoxRepository).singleton(),
     cashboxstatementRepository: asClass(CashBoxStatementRepository).singleton(),
     companyRepository: asClass(CompanyRepository).singleton(),
@@ -92,7 +96,6 @@ const definition = {
     userGroupRepository: asClass(UserGroupRepository).singleton(),
     userRepository: asClass(UserRepository).singleton(),
     userRuleRepository: asClass(UserRuleRepository).singleton(),
-
 };
 
 const container = createContainer().register(definition);
