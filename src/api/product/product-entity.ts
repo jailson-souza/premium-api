@@ -55,7 +55,7 @@ export class Product extends EntityBase {
         },
         inverseJoinColumn: {
             name: "stockCode",
-            referencedColumnName: "stockCode6",
+            referencedColumnName: "id",
         },
     })
     stock?: Stock[];

@@ -37,6 +37,7 @@ import { FormOfPaymentService } from "@api/form-of-payment/form-of-payment-servi
 import { CostCenter } from "@api/cost-center/cost-center-entity";
 import { FixedAccountService } from "@api/fixed-account/fixed-account-service";
 import { FixedAccountRepository } from "@api/fixed-account/fixed-account-repository";
+import { CostCenterRepository } from "@api/cost-center/cost-center-repository";
 
 const definition = {
     // util
@@ -67,7 +68,7 @@ const definition = {
     addressRepository: asClass(AddressRepository).singleton(),
     authRepository: asClass(AuthRepository).singleton(),
     companyRepository: asClass(CompanyRepository).singleton(),
-    costcenterRepository: asClass(CostCenter).singleton(),
+    costcenterRepository: asClass(CostCenterRepository).singleton(),
     customerRepository: asClass(CustomerRepository).singleton(),
     employeeRepository: asClass(EmployeeRepository).singleton(),
     fixedaccountRepository: asClass(FixedAccountRepository).singleton(),

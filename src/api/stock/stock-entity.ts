@@ -24,7 +24,7 @@ export class Stock extends EntityBase {
         name: "product_stock",
         joinColumn: {
             name: "stockCode",
-            referencedColumnName: "stockCode",
+            referencedColumnName: "id",
         },
         inverseJoinColumn: {
             name: "productId",

@@ -2,7 +2,7 @@ import { Address } from "@api/address/address-entity";
 import { EntityBase } from "@api/base/entity-base";
 import { DocumentType } from "@api/base/enum/document-type-enum";
 import { Phone } from "@api/phone/phone-entity";
-import { Column, Entity, JoinColumn, OneToMany } from "typeorm";
+import { Column, Entity, OneToMany } from "typeorm";
 @Entity()
 export class Provider extends EntityBase {
     @Column()
