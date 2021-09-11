@@ -44,6 +44,8 @@ import { CashBoxStatementRepository } from "@api/cash-box-statement/cash-box-sta
 import { BankAccountService } from "@api/bank-account/bank-account-service";
 import { CostCenterService } from "@api/cost-center/cost-center-service";
 import { BankAccountRepository } from "@api/bank-account/bank-account-repository";
+import { BillsPayService } from "@api/bills-pay/bills-pay-service";
+import { BillsPayRepository } from "@api/bills-pay/bills-pay-repository";
 
 const definition = {
     // util
@@ -53,6 +55,7 @@ const definition = {
     addressService: asClass(AddressService).singleton(),
     authService: asClass(AuthService).singleton(),
     bankaccountService: asClass(BankAccountService).singleton(),
+    billspayService: asClass(BillsPayService).singleton(),
     cashboxService: asClass(CashBoxService).singleton(),
     cashboxstatementService: asClass(CashBoxStatementService).singleton(),
     companyService: asClass(CompanyService).singleton(),
@@ -77,6 +80,7 @@ const definition = {
     addressRepository: asClass(AddressRepository).singleton(),
     authRepository: asClass(AuthRepository).singleton(),
     bankaccountRepository: asClass(BankAccountRepository).singleton(),
+    billspayRepository: asClass(BillsPayRepository).singleton(),
     cashboxRepository: asClass(CashBoxRepository).singleton(),
     cashboxstatementRepository: asClass(CashBoxStatementRepository).singleton(),
     companyRepository: asClass(CompanyRepository).singleton(),
