@@ -16,7 +16,7 @@
     "test": "jest --coverage --detectOpenHandles",
     "lint": "eslint . --ext .ts",
     "fix-lint": "eslint . --ext .ts --fix",
-    "build": "tsc",
+    "build": "npx rimraf dist && tsc",
     "seed": "node -r module-alias/register -r dotenv/config dist/seed.js dotenv_config_path=./config/.env"
   },
   "_moduleAliases": {
@@ -29,6 +29,7 @@
     "@container": "dist/container"
   },
   "dependencies": {
+    "@types/express-handlebars": "^5.3.1",
     "awilix": "^4.3.4",
     "awilix-express": "^3.0.0",
     "axios": "^0.21.1",
@@ -38,6 +39,7 @@
     "date-fns": "^2.23.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
     "express-respond": "^1.5.15",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",

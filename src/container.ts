@@ -54,7 +54,7 @@ import { BankAccountStatementRepository } from "@api/bank-account-statement/bank
 const definition = {
     // util
     logger: asClass(Logger).singleton(),
-    
+
     // service
     addressService: asClass(AddressService).singleton(),
     authService: asClass(AuthService).singleton(),

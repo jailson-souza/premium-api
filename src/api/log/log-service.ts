@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
-import { LogServiceInterface } from "./interface/log-service-interface";
+import { LogServiceInterface, ResponseLog } from "./interface/log-service-interface";
 import { Log } from "./log-entity";
 import { ErrorUtil } from "@util/error";
 
 export class LogService implements LogServiceInterface {
-    async getLogByDate(date: string): Promise<Log[]> {
+    async getLogByDate(date: string): Promise<ResponseLog> {
         if (!Number(date) || (Number(date) && date.length !== 8)) {
             throw new ErrorUtil.PropertyValueInvalidError("Date format is not the same as 'YYYYMMDD'", { date });
         }
@@ -34,6 +34,9 @@ export class LogService implements LogServiceInterface {
                 return prev;
             }, []);
 
-        return content;
+        return {
+            logFile: logFileName,
+            items: content,
+        };
     }
 }

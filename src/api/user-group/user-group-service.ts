@@ -7,6 +7,7 @@ import { UserGroup } from "./user-group-entity";
 
 export class UserGroupService extends ServiceBase<UserGroup> implements UserGroupServiceInterface {
     private userGroupRepository: UserGroupRepositoryInterface;
+
     constructor({ userGroupRepository }) {
         super(userGroupRepository);
         this.userGroupRepository = userGroupRepository;

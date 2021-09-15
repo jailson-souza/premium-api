@@ -6,7 +6,6 @@ import { ErrorUtil } from "@util/error";
 import { UserRepositoryInterface } from "./interface/user-repository-interface";
 import { Encrypt } from "@util/encrypt";
 import { EmployeeRepositoryInterface } from "@api/employee/interface/employee-repository-interface";
-
 export class UserService extends ServiceBase<User> implements UserServiceInterface {
     private userRepository: UserRepositoryInterface;
     private employeeRepository: EmployeeRepositoryInterface;
@@ -15,6 +14,11 @@ export class UserService extends ServiceBase<User> implements UserServiceInterfa
         super(userRepository);
         this.userRepository = userRepository;
         this.employeeRepository = employeeRepository;
+    }
+
+    async getUsersInformation(): Promise<any[]> {
+        const users = await this.userRepository.getUsersInformation();
+        return users;
     }
 
     async create(user: User): Promise<User> {
