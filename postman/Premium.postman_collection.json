@@ -434,7 +434,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"jailson.souza@gmail.com\",\r\n    \"password\": \"Admin@00\",\r\n    \"employeeId\": 6,\r\n    \"userGroupId\": 1\r\n}",
+							"raw": "{\r\n    \"email\": \"andre.padua.lana@gmail.com\",\r\n    \"password\": \"admnet@01\",\r\n    \"employeeId\": 1,\r\n    \"userGroupId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -480,7 +480,13 @@
 					"name": "user get by id",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base-url}}/user/:id",
 							"host": [
@@ -493,7 +499,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "6"
 								}
 							]
 						}
@@ -766,7 +772,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"criar usuário\",\r\n    \"action\": \"CREATE\",\r\n    \"module\": \"user\",\r\n    \"description\": \"Permite um usuário criar outro usuário\"\r\n}",
+							"raw": "{\r\n    \"name\": \"teste rule fila de eventos\",\r\n    \"action\": \"read\",\r\n    \"module\": \"event-queue-andre-phone\",\r\n    \"description\": \"permite fazer a leitura de todos os eventos pendentes\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

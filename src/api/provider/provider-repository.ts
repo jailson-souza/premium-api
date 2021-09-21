@@ -3,7 +3,7 @@ import { ProviderRepositoryInterface } from "./interface/provider-repository-int
 import { Provider } from "./provider-entity";
 
 export class ProviderRepository extends RepositoryBase<Provider> implements ProviderRepositoryInterface {
-    constructor(){
+    constructor() {
         super(Provider);
     }
 }

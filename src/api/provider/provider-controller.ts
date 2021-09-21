@@ -4,7 +4,7 @@ import { Provider } from "./provider-entity";
 
 @route("/provider")
 export class ProviderController extends ControllerBase<Provider> {
-    constructor({ providerService }){
+    constructor({ providerService }) {
         super(providerService);
     }
 }

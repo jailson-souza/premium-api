@@ -1,13 +1,13 @@
 import { NextFunction, Request, Response } from "express";
 import container from "@container";
 import { Logger } from "@util/logger";
+import { noLogAPI } from "@util/constant/white-list";
 
 const logger: Logger = container.resolve("logger");
-const whiteRoutes = ["/api/log"];
 
 export function logMiddleware(request: Request, _: Response, next: NextFunction) {
     try {
-        if (whiteRoutes.indexOf(request.path) > -1) {
+        if (!noLogAPI.includes(request.path)) {
             return next();
         }
 

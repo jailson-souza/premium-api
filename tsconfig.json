@@ -8,16 +8,17 @@
         "outDir": "./dist",
         "rootDir": "./src",
         "lib": [
-            "ES6"
+            "ES6",
+            "DOM"
         ],
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "sourceMap": false,
+        "sourceMap": true,
         "resolveJsonModule": true,
         "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
-        "paths": {
+         "paths": {
             "@app/*": [
                 "./src/app/*"
             ],

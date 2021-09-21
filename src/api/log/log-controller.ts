@@ -16,6 +16,18 @@ export class LogController {
     async getLog(request: Request, response: Response) {
         const date = <string>request.query?.date ?? format(Date.now(), "yyyyMMdd");
         const content = await this.logService.getLogByDate(date);
-        return response.status(HttpStatusCode.Ok).send(content);
+        return response.status(HttpStatusCode.Ok).send(content.items);
+    }
+
+    @GET()
+    @route("/view")
+    async view(request: Request, response: Response) {
+        const date = <string>request.query?.date ?? format(Date.now(), "yyyyMMdd");
+        let log = await this.logService.getLogByDate(date);
+        log = {
+            ...log,
+            items: log.items.map(item => ({ ...item, metadata: JSON.stringify(item.metadata) })),
+        };
+        return response.render("log", { layout: false, log });
     }
 }

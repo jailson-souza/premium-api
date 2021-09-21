@@ -9,7 +9,7 @@ export default class UserGroupSeed {
     private userRuleRepository: UserRuleRepositoryInterface;
     constructor() {
         this.userGroupRepository = container.resolve("userGroupRepository");
-        this.userRuleRepository =  container.resolve("userRuleRepository");
+        this.userRuleRepository = container.resolve("userRuleRepository");
     }
 
     private async addRules(userGroupId: number, ruleCodes: string[]): Promise<void> {
@@ -28,7 +28,7 @@ export default class UserGroupSeed {
         const groups = await this.userGroupRepository.getAll();
         const names = _.map(groups, group => group.name);
 
-        console.log("names", names)
+        console.log("names", names);
 
         const rules = await this.userRuleRepository.getAll();
         const ruleCodes = rules.map(rule => rule.ruleCode);

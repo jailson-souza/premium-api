@@ -1,4 +1,3 @@
-
 import { ServiceBase } from "@api/base/service-base";
 import { Purchase } from "../purchase-entity";
 

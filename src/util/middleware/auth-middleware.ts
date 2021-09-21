@@ -7,6 +7,8 @@ import { httpMethodToAction } from "@util/constant/http-method-to-action";
 import { noCheckAuthAndRule } from "@util/constant/white-list";
 interface TokenPayload {
     userId: string | number;
+    userEmail: string;
+    userCode: string;
     iat: number;
     exp: number;
 }
@@ -32,7 +34,11 @@ export async function checkAuth(request: Request, response: Response, next: Next
 
     try {
         const data = Token.verify<TokenPayload>(accessToken);
-        request.userId = data.userId.toString();
+        request.user = {
+            id: data.userId.toString(),
+            email: data.userEmail,
+            userCode: data.userCode,
+        };
     } catch (e) {
         const unauthorizedError = new ErrorUtil.UnauthorizedError(e.message);
         return response.status(unauthorizedError.errorCode).send(unauthorizedError);
@@ -48,13 +54,13 @@ export async function checkRule(request: Request, response: Response, next: Next
         return next();
     }
 
-    const userId = request.userId;
+    const user = request.user;
     const action = httpMethodToAction[request.method.toUpperCase()];
 
     const ruleCode = `${action}-${module}`;
 
     const authorized = await (<AuthServiceInterface>container.resolve("authService")).verifyUserRule(
-        Number(userId),
+        Number(user.id),
         ruleCode,
     );
 
