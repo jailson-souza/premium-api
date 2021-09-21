@@ -4,5 +4,5 @@ import { Column, Entity } from "typeorm";
 @Entity()
 export class CashBox extends EntityBase {
     @Column()
-    nameUser: String;
+    nameUser: string;
 }

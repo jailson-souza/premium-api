@@ -25,7 +25,7 @@ export class AuthService implements AuthServiceInterface {
             throw new ErrorUtil.UnauthorizedError("usuário ou senha invalidos");
         }
 
-        const auth = Token.sign({ userId: user.id });
+        const auth = Token.sign({ userId: user.id, userEmail: user.email, userCode: user.userCode });
 
         return auth;
     }

@@ -6,7 +6,7 @@ export class BankAccountStatementRepository
     extends RepositoryBase<BankAccountStatement>
     implements BankAccountStatementRepositoryInterface
 {
-    constructor(){
+    constructor() {
         super(BankAccountStatement);
     }
 }

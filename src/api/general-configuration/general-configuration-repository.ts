@@ -6,7 +6,7 @@ export class GeneralConfigurationrRepository
     extends RepositoryBase<GeneralConfiguration>
     implements GeneralConfigurationRepositoryInterface
 {
-    constructor(){
+    constructor() {
         super(GeneralConfiguration);
     }
 }

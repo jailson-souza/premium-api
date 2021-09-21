@@ -50,12 +50,15 @@ import { BillsReceiveService } from "@api/bills-receive/bills-receive-service";
 import { BillsReceiveRepository } from "@api/bills-receive/bills-receive-repository";
 import { BankAccountStatementService } from "@api/bank-account-statement/bank-account-statement-service";
 import { BankAccountStatementRepository } from "@api/bank-account-statement/bank-account-statement-repository";
+import { AuditService } from "@api/audit/audit-service";
+import { AuditRepository } from "@api/audit/audit-repostory";
 
 const definition = {
     // util
     logger: asClass(Logger).singleton(),
 
     // service
+    auditService: asClass(AuditService).singleton(),
     addressService: asClass(AddressService).singleton(),
     authService: asClass(AuthService).singleton(),
     bankaccountService: asClass(BankAccountService).singleton(),
@@ -83,6 +86,7 @@ const definition = {
     userService: asClass(UserService).singleton(),
 
     // repository
+    auditRepository: asClass(AuditRepository).singleton(),
     addressRepository: asClass(AddressRepository).singleton(),
     authRepository: asClass(AuthRepository).singleton(),
     bankaccountRepository: asClass(BankAccountRepository).singleton(),
@@ -101,7 +105,7 @@ const definition = {
     phoneRepository: asClass(PhoneRepository).singleton(),
     productGroupRepository: asClass(ProductGroupRepository).singleton(),
     productRepository: asClass(ProductRepository).singleton(),
-    providerRepository: asClass(ProviderRepository).singleton(), 
+    providerRepository: asClass(ProviderRepository).singleton(),
     purchaseRepository: asClass(PurchaseRepository).singleton(),
     saleRepository: asClass(SaleRepository).singleton(),
     serviceOrderRepository: asClass(ServiceOrderRepository).singleton(),

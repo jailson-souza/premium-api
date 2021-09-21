@@ -4,7 +4,7 @@ import { Purchase } from "./purchase-entity";
 
 @route("/purchase")
 export class PurchaseController extends ControllerBase<Purchase> {
-    constructor({ purchaseService }){
-        super( purchaseService);
+    constructor({ purchaseService }) {
+        super(purchaseService);
     }
 }
