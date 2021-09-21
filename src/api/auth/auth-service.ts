@@ -20,7 +20,7 @@ export class AuthService implements AuthServiceInterface {
         if (!user) {
             throw new ErrorUtil.UnauthorizedError("user not found");
         }
-
+        
         if (!Encrypt.comparePassword(login.password, user.password)) {
             throw new ErrorUtil.UnauthorizedError("usuário ou senha invalidos");
         }
