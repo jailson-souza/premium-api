@@ -3,7 +3,6 @@ import { StockConfig } from "@api/stock-config/stock-config-entity";
 import { UnitOfMeasurement } from "@api/base/enum/unit-of-measurement-enum";
 import { Column, Entity, JoinColumn, OneToOne, ManyToMany, JoinTable } from "typeorm";
 import { Product } from "@api/product/product-entity";
-
 @Entity()
 export class Stock extends EntityBase {
     @Column()
