@@ -52,6 +52,8 @@ import { BankAccountStatementService } from "@api/bank-account-statement/bank-ac
 import { BankAccountStatementRepository } from "@api/bank-account-statement/bank-account-statement-repository";
 import { AuditService } from "@api/audit/audit-service";
 import { AuditRepository } from "@api/audit/audit-repostory";
+import { SaleItemService } from "@api/sale-item/sale-item-service";
+import { SaleItemRepository } from "@api/sale-item/sale-item-repository";
 
 const definition = {
     // util
@@ -80,6 +82,7 @@ const definition = {
     providerService: asClass(ProviderService).singleton(),
     purchaseService: asClass(PurchaseService).singleton(),
     saleService: asClass(SaleService).singleton(),
+    saleitemService: asClass(SaleItemService).singleton(),
     serviceOrderService: asClass(ServiceOrderService).singleton(),
     userGroupService: asClass(UserGroupService).singleton(),
     userRuleService: asClass(UserRuleService).singleton(),
@@ -108,6 +111,7 @@ const definition = {
     providerRepository: asClass(ProviderRepository).singleton(),
     purchaseRepository: asClass(PurchaseRepository).singleton(),
     saleRepository: asClass(SaleRepository).singleton(),
+    saleitemRepository: asClass(SaleItemRepository).singleton(),
     serviceOrderRepository: asClass(ServiceOrderRepository).singleton(),
     userGroupRepository: asClass(UserGroupRepository).singleton(),
     userRepository: asClass(UserRepository).singleton(),
