@@ -1,1 +1,4 @@
-export enum StatementTypeEnum {}
+export enum StatementTypeEnum {
+    Output = "output",
+    Input = "input",
+}
