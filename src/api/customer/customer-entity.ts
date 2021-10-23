@@ -3,7 +3,8 @@ import { EntityBase } from "@api/base/entity-base";
 import { Phone } from "@api/phone/phone-entity";
 import { CustomerType } from "./enum/customer-type-enum";
 import { DocumentType } from "@api/base/enum/document-type-enum";
-import { Column, Entity, JoinColumn, OneToMany } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, OneToOne } from "typeorm";
+import { Sale } from "@api/sale/sale-entity";
 
 @Entity()
 export class Customer extends EntityBase {
@@ -47,4 +48,8 @@ export class Customer extends EntityBase {
 
     @Column({ nullable: true })
     restrictionNote?: string;
+
+    @OneToMany(() => Sale, s => s.id)
+    @JoinColumn()
+    Sale?: Sale;
 }

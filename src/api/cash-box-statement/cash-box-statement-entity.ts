@@ -8,7 +8,7 @@ export class CashBoxStatement extends EntityBase {
     transactionAmount: number; // Valor transação
 
     @Column({ type: "integer" })
-    CashBoxId: number;
+    cashBoxId: number;
 
     @Column({ type: "enum", enum: StatementTypeEnum })
     type: StatementTypeEnum;
