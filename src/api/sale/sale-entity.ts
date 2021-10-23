@@ -1,5 +1,6 @@
 import { EntityBase } from "@api/base/entity-base";
-import { Column, Entity } from "typeorm";
+import { SaleItem } from "@api/sale-item/sale-item-entity";
+import { Column, Entity, JoinColumn, OneToMany } from "typeorm";
 
 @Entity()
 export class Sale extends EntityBase {
@@ -10,4 +11,8 @@ export class Sale extends EntityBase {
     @Column()
     downStock: boolean;
     // Baixado Estoque
+
+    @OneToMany(() => SaleItem, si => si.id)
+    @JoinColumn()
+    SaleItem?: SaleItem;
 }

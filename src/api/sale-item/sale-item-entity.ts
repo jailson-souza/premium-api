@@ -1,5 +1,6 @@
 import { EntityBase } from "@api/base/entity-base";
-import { Column, Entity } from "typeorm";
+import { Sale } from "@api/sale/sale-entity";
+import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 
 @Entity()
 export class SaleItem extends EntityBase {
@@ -11,4 +12,11 @@ export class SaleItem extends EntityBase {
     // qtd item
 
     // Tipo / unidade
+
+    @Column({ type: "integer" })
+    saleId: number;
+
+    @ManyToOne(() => Sale, s => s.id)
+    @JoinColumn()
+    Sale?: Sale;
 }
