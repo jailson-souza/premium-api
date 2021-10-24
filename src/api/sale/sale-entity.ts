@@ -1,6 +1,7 @@
 import { EntityBase } from "@api/base/entity-base";
 import { Company } from "@api/company/company-entity";
 import { Customer } from "@api/customer/customer-entity";
+import { Employee } from "@api/employee/employee-entity";
 import { SaleItem } from "@api/sale-item/sale-item-entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
 
@@ -31,4 +32,11 @@ export class Sale extends EntityBase {
     @ManyToOne(() => Company, co => co.id)
     @JoinColumn()
     Company?: Company;
+
+    @Column({ type: "integer" })
+    employeeId?: number;
+
+    @ManyToOne(() => Employee, e => e.id)
+    @JoinColumn()
+    Employee?: Employee;
 }
