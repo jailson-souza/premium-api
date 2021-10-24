@@ -5,6 +5,7 @@ import { CompanyCategory } from "./enum/company-category-enum";
 import { Address } from "@api/address/address-entity";
 import { Phone } from "@api/phone/phone-entity";
 import { Employee } from "@api/employee/employee-entity";
+import { Sale } from "@api/sale/sale-entity";
 
 @Entity()
 export class Company extends EntityBase {
@@ -42,4 +43,8 @@ export class Company extends EntityBase {
     @OneToMany(() => Employee, e => e.company)
     @JoinColumn()
     employees?: Employee[];
+
+    @OneToMany(() => Sale, s => s.id)
+    @JoinColumn()
+    Sale?: Sale;
 }
