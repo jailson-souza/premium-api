@@ -4,6 +4,7 @@ import { Customer } from "@api/customer/customer-entity";
 import { Employee } from "@api/employee/employee-entity";
 import { SaleItem } from "@api/sale-item/sale-item-entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
+import { SituationEnum } from "./enum/situation-enum";
 
 @Entity()
 export class Sale extends EntityBase {
@@ -14,6 +15,24 @@ export class Sale extends EntityBase {
     @Column()
     downStock: boolean;
     // Baixado Estoque
+
+    // Status
+    @Column({ type: "enum", enum: SituationEnum })
+    situation: SituationEnum;
+
+    @Column()
+    saleDate?: Date;
+
+    @Column()
+    deliveryDate?: Date;
+    // Data Entrega
+
+    @Column({ nullable: false, default: "0.00", type: "float" })
+    freightValue?: number;
+    // Valor Frete
+
+    @Column({ nullable: false })
+    note?: string;
 
     @OneToMany(() => SaleItem, si => si.id)
     @JoinColumn()
