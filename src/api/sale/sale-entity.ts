@@ -8,11 +8,11 @@ import { SituationEnum } from "./enum/situation-enum";
 
 @Entity()
 export class Sale extends EntityBase {
-    @Column()
+    @Column({ nullable: false, default: "false" })
     financialRelease: boolean;
     // Lançado no Financeiro
 
-    @Column()
+    @Column({ nullable: false, default: "false" })
     downStock: boolean;
     // Baixado Estoque
 
@@ -20,10 +20,10 @@ export class Sale extends EntityBase {
     @Column({ type: "enum", enum: SituationEnum })
     situation: SituationEnum;
 
-    @Column()
+    @Column({ nullable: false, default: () => "CURRENT_TIMESTAMP" })
     saleDate?: Date;
 
-    @Column()
+    @Column({ nullable: true })
     deliveryDate?: Date;
     // Data Entrega
 
