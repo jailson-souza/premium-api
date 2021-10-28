@@ -4,7 +4,7 @@ import { Column, Entity, ManyToOne, JoinColumn } from "typeorm";
 import { UnitOfMeasurement } from "@api/base/enum/unit-of-measurement-enum";
 @Entity()
 export class Product extends EntityBase {
-    @Column({ nullable: true })
+    @Column({ nullable: false })
     name: string;
 
     @Column({ nullable: true })
@@ -23,11 +23,11 @@ export class Product extends EntityBase {
     @Column({ nullable: true })
     physicalLocation?: string;
 
-    @Column({ nullable: true })
-    controlStock?: boolean;
+    @Column({ nullable: false, default: true })
+    controlStock?: boolean; // Controlar Estoque
 
-    @Column({ nullable: true })
-    sellWithZeroStock?: boolean;
+    @Column({ nullable: false, default: false })
+    sellWithZeroStock?: boolean; // Permitir vender Estoque zerado
 
     @Column({ nullable: true })
     minimumStock?: number;
