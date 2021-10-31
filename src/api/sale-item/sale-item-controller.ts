@@ -3,7 +3,7 @@ import { route } from "awilix-router-core";
 import { SaleItem } from "./sale-item-entity";
 @route("/sale-item")
 export class SaleItemController extends ControllerBase<SaleItem> {
-    constructor({ saleitemService }) {
-        super(saleitemService);
+    constructor({ saleItemService }) {
+        super(saleItemService);
     }
 }

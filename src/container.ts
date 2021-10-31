@@ -44,8 +44,8 @@ import { PurchaseRepository } from "@api/purchase/purchase-repository";
 import { PurchaseService } from "@api/purchase/purchase-service";
 import { SaleRepository } from "@api/sale/sale-repository";
 import { SaleService } from "@api/sale/sale-service";
-import { SaleItemRepository } from "@api/sale-item/sale-item-repository";
 import { SaleItemService } from "@api/sale-item/sale-item-service";
+import { SaleItemRepository } from "@api/sale-item/sale-item-repository";
 import { ServiceOrderRepository } from "@api/service-order/service-order-repository";
 import { ServiceOrderService } from "@api/service-order/service-order-service";
 import { UserGroupRepository } from "@api/user-group/user-group-repository";
@@ -81,7 +81,7 @@ const definition = {
     providerService: asClass(ProviderService).singleton(),
     purchaseService: asClass(PurchaseService).singleton(),
     saleService: asClass(SaleService).singleton(),
-    saleitemService: asClass(SaleItemService).singleton(),
+    saleItemService: asClass(SaleItemService).singleton(),
     serviceOrderService: asClass(ServiceOrderService).singleton(),
     userGroupService: asClass(UserGroupService).singleton(),
     userRuleService: asClass(UserRuleService).singleton(),
@@ -110,7 +110,7 @@ const definition = {
     providerRepository: asClass(ProviderRepository).singleton(),
     purchaseRepository: asClass(PurchaseRepository).singleton(),
     saleRepository: asClass(SaleRepository).singleton(),
-    saleitemRepository: asClass(SaleItemRepository).singleton(),
+    saleItemRepository: asClass(SaleItemRepository).singleton(),
     serviceOrderRepository: asClass(ServiceOrderRepository).singleton(),
     userGroupRepository: asClass(UserGroupRepository).singleton(),
     userRepository: asClass(UserRepository).singleton(),

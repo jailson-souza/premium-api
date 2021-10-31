@@ -3,7 +3,7 @@ import { Company } from "@api/company/company-entity";
 import { Customer } from "@api/customer/customer-entity";
 import { Employee } from "@api/employee/employee-entity";
 import { SaleItem } from "@api/sale-item/sale-item-entity";
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 import { SituationEnum } from "./enum/situation-enum";
 
 @Entity()
