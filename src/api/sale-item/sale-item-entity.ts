@@ -9,6 +9,7 @@ export class SaleItem extends EntityBase {
 
     @Column({ nullable: false, default: "0.00", type: "float" })
     quantity: number; // Quantidade
+
     // qtd item
 
     // Tipo / unidade
