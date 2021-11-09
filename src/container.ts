@@ -84,7 +84,7 @@ const definition = {
     userGroupService: asClass(UserGroupService).singleton(),
     userRuleService: asClass(UserRuleService).singleton(),
     userService: asClass(UserService).singleton(),
-    
+
     // repository
     auditRepository: asClass(AuditRepository).singleton(),
     addressRepository: asClass(AddressRepository).singleton(),
