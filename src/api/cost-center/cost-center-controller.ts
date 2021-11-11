@@ -4,7 +4,7 @@ import { CostCenter } from "./cost-center-entity";
 
 @route("cost-center")
 export class CostCenterController extends ControllerBase<CostCenter> {
-    constructor({ costcenterService }) {
-        super(costcenterService);
+    constructor({ costCenterService }) {
+        super(costCenterService);
     }
 }

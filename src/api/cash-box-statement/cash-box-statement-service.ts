@@ -3,7 +3,7 @@ import { CashBoxStatement } from "./cash-box-statement-entity";
 import { CashBoxStatementServiceInterface } from "./interface/cash-box-statement-service-interface";
 
 export class CashBoxStatementService extends ServiceBase<CashBoxStatement> implements CashBoxStatementServiceInterface {
-    constructor({ cashboxstatementRepository }) {
-        super(cashboxstatementRepository);
+    constructor({ cashBoxStatementRepository }) {
+        super(cashBoxStatementRepository);
     }
 }

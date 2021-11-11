@@ -3,7 +3,7 @@ import { FixedAccount } from "./fixed-account-entity";
 import { FixedAccountServiceInterface } from "./interface/fixed-account-service-interface";
 
 export class FixedAccountService extends ServiceBase<FixedAccount> implements FixedAccountServiceInterface {
-    constructor(fixedaccountRepository) {
-        super(fixedaccountRepository);
+    constructor(fixedAccountRepository) {
+        super(fixedAccountRepository);
     }
 }

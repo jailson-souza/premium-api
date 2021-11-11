@@ -9,9 +9,8 @@ export class AuditRepository implements AuditRepositoryInterface {
         this.db = getConnection().getRepository<Audit>(Audit);
     }
 
-    async save(audit: Audit): Promise<boolean> {
+    async save(audit: Audit): Promise<void> {
         const created = this.db.create(audit);
         await this.db.save(created);
-        return true;
     }
 }

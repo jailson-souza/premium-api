@@ -4,7 +4,7 @@ import { BankAccount } from "./bank-account-entity";
 
 @route("/back-account")
 export class BankAccountController extends ControllerBase<BankAccount> {
-    constructor({ bankaccountService }) {
-        super(bankaccountService);
+    constructor({ bankAccountService }) {
+        super(bankAccountService);
     }
 }

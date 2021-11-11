@@ -11,8 +11,8 @@ export class User extends EntityBase {
     @Column({ unique: true })
     email: string;
 
-    @Column({ select: false })
-    password: string;
+    @Column({ select: false, nullable: true })
+    password?: string;
 
     @Column()
     employeeId: number;

@@ -32,7 +32,7 @@ export class UserRepository extends RepositoryBase<User> implements UserReposito
             .addSelect("employee.name", "name")
             .addSelect("userGroup.name", "group")
             .innerJoin("user.employee", "employee", "user.employeeId = employee.id")
-            .innerJoin("user.userGroup", "userGroup", "user.userGroupId = userGroup.id")
+            .leftJoin("user.userGroup", "userGroup", "user.userGroupId = userGroup.id")
             .execute();
 
         return users;

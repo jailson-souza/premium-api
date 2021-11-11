@@ -4,7 +4,7 @@ import { FormOfPayment } from "./form-of-payment-entity";
 
 @route("/form-of-payment")
 export class FormOfPaymentController extends ControllerBase<FormOfPayment> {
-    constructor({ formofpaymentService }) {
-        super(formofpaymentService);
+    constructor({ formOfPaymentService }) {
+        super(formOfPaymentService);
     }
 }

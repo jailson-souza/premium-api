@@ -4,7 +4,7 @@ import { CashBox } from "./cash-box-entity";
 
 @route("cash-box")
 export class CashBoxController extends ControllerBase<CashBox> {
-    constructor({ cashboxService }) {
-        super(cashboxService);
+    constructor({ cashBoxService }) {
+        super(cashBoxService);
     }
 }

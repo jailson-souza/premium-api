@@ -4,7 +4,7 @@ import { BillsPay } from "./bills-pay-entity";
 
 @route("/bills-pay")
 export class BillsPayController extends ControllerBase<BillsPay> {
-    constructor({ billspayService }) {
-        super(billspayService);
+    constructor({ billsPayService }) {
+        super(billsPayService);
     }
 }

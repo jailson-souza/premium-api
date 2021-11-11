@@ -8,8 +8,7 @@ export class AuditService implements AuditServiceInterface {
         this.auditRepository = auditRepository;
     }
 
-    async save(audit: Audit): Promise<boolean> {
+    async save(audit: Audit): Promise<void> {
         await this.auditRepository.save(audit);
-        return true;
     }
 }

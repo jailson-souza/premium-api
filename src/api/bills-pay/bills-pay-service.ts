@@ -3,7 +3,7 @@ import { BillsPay } from "./bills-pay-entity";
 import { BillsPayServiceInterface } from "./interface/bills-pay-service-interface";
 
 export class BillsPayService extends ServiceBase<BillsPay> implements BillsPayServiceInterface {
-    constructor({ billspayRepository }) {
-        super(billspayRepository);
+    constructor({ billsPayRepository }) {
+        super(billsPayRepository);
     }
 }

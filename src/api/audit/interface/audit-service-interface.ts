@@ -1,5 +1,5 @@
 import { Audit } from "../audit-entity";
 
 export interface AuditServiceInterface {
-    save(audit: Audit): Promise<boolean>;
+    save(audit: Audit): Promise<void>;
 }

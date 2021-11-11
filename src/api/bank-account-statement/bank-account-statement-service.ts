@@ -6,7 +6,7 @@ export class BankAccountStatementService
     extends ServiceBase<BankAccountStatement>
     implements BankAccountStatementServiceInterface
 {
-    constructor({ bankaccountstatementRepository }) {
-        super(bankaccountstatementRepository);
+    constructor({ bankAccountstatementRepository }) {
+        super(bankAccountstatementRepository);
     }
 }

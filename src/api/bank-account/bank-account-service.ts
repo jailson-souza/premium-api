@@ -3,7 +3,7 @@ import { BankAccount } from "./bank-account-entity";
 import { BankAccountServiceInterface } from "./interface/bank-account-service-interface";
 
 export class BankAccountService extends ServiceBase<BankAccount> implements BankAccountServiceInterface {
-    constructor({ bankaccountRepository }) {
-        super(bankaccountRepository);
+    constructor({ bankAccountRepository }) {
+        super(bankAccountRepository);
     }
 }

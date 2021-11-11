@@ -38,7 +38,9 @@ export class UserService extends ServiceBase<User> implements UserServiceInterfa
 
         user.userCode = user.email;
 
-        user.password = Encrypt.encryptPassword(user.password);
+        if (user.password) {
+            user.password = Encrypt.encryptPassword(user.password);
+        }
 
         const created = await this.repository.create(user);
 
@@ -79,7 +81,7 @@ export class UserService extends ServiceBase<User> implements UserServiceInterfa
 
     private verifyFields(user: User): void {
         const fields = _.keys(user);
-        const requiredFields = _.filter(["email", "password", "employeeId"], key => !fields.includes(key));
+        const requiredFields = _.filter(["email", "employeeId"], key => !fields.includes(key));
         if (requiredFields.length > 0) {
             throw new ErrorUtil.PropertyRequiredError("Campos obrigatorios não foram enviados", requiredFields);
         }

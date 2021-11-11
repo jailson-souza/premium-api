@@ -4,7 +4,7 @@ import { FixedAccount } from "./fixed-account-entity";
 
 @route("fixed-account")
 export class FixedAccountController extends ControllerBase<FixedAccount> {
-    constructor({ fixedaccountService }) {
-        super(fixedaccountService);
+    constructor({ fixedAccountService }) {
+        super(fixedAccountService);
     }
 }
