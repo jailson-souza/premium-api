@@ -3,7 +3,7 @@ import { ServiceServiceInterface } from "@api/service/interface/service-service-
 import { Service } from "@api/service/service-entity";
 
 export class ServiceService extends ServiceBase<Service> implements ServiceServiceInterface {
-    constructor({ ServiceRepository }) {
-        super(ServiceRepository);
+    constructor({ serviceRepository }) {
+        super(serviceRepository);
     }
 }

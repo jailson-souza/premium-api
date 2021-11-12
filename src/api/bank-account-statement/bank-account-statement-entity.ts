@@ -9,7 +9,7 @@ export class BankAccountStatement extends EntityBase {
     transactionAmount: number; // Valor transação
 
     @Column({ type: "enum", enum: StatementTypeEnum })
-    type: StatementTypeEnum;
+    type?: StatementTypeEnum;
 
     @Column({ type: "integer" })
     bankAccountId: number;
