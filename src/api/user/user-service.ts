@@ -21,62 +21,37 @@ export class UserService extends ServiceBase<User> implements UserServiceInterfa
         return users;
     }
 
+    getByEmployeeId(employeeId: number): Promise<User> {
+        return this.userRepository.getUserByEmployeeId(employeeId);
+    }
+
     async create(user: User): Promise<User> {
         this.verifyFields(user);
 
         const userExist = await this.verifyUserExist(user);
         if (userExist) {
-            throw new ErrorUtil.RecordAlreadyExistError("Registro já cadastrado", { user: userExist });
+            throw new ErrorUtil.RecordAlreadyExistError("Usuário já cadastrado", { user: userExist });
         }
 
         const employee = await this.employeeRepository.getById(user.employeeId);
         if (!employee) {
-            throw new ErrorUtil.PropertyValueInvalidError("Id de funcionário inválido", {
+            throw new ErrorUtil.PropertyValueInvalidError("Id de funcionário inválido, já cadastrado.", {
                 employeeId: user.employeeId,
             });
         }
 
         user.userCode = user.email;
-
-        if (user.password) {
-            user.password = Encrypt.encryptPassword(user.password);
-        }
+        user.password = user.password && Encrypt.encryptPassword(user.password);
 
         const created = await this.repository.create(user);
-
-        if (created.password) {
-            delete created.password;
-        }
-
+        Reflect.deleteProperty(created, "password");
         return created;
     }
 
-    private async verifyUserExist(user: User): Promise<User> {
-        const userByEmail = await this.userRepository.getUserByEmail(user.email);
-        if (userByEmail) {
-            const result = {
-                id: userByEmail.id,
-                email: userByEmail.email,
-                userCode: userByEmail.userCode,
-                employeeId: userByEmail.employeeId,
-                createdAt: userByEmail.createdAt,
-            };
-            return result as User;
-        }
-
-        const userByEmpolyeeId = await this.userRepository.getUserByEmployeeId(user.employeeId);
-        if (userByEmpolyeeId) {
-            const result = {
-                id: userByEmpolyeeId.id,
-                email: userByEmpolyeeId.email,
-                userCode: userByEmpolyeeId.userCode,
-                employeeId: userByEmpolyeeId.employeeId,
-                createdAt: userByEmpolyeeId.createdAt,
-            };
-            return result as User;
-        }
-
-        return undefined;
+    private async verifyUserExist({ employeeId, email }): Promise<User> {
+        const userByEmail = await this.userRepository.getUserByEmail(email);
+        const userByEmpolyeeId = await this.userRepository.getUserByEmployeeId(employeeId);
+        return userByEmail ?? userByEmpolyeeId;
     }
 
     private verifyFields(user: User): void {

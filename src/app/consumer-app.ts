@@ -1,6 +1,6 @@
 import container from "@container";
-import { UserConsumerInterface } from "@api/user/interface/user-consumer-interface";
+import { ConsumerBase } from "@api/base/consumer-base";
 
 export default async function consumerApp() {
-    container.resolve<UserConsumerInterface>("userConsumer").subscribeToTopics();
+    container.resolve<ConsumerBase>("userConsumer").subscribeToTopics();
 }

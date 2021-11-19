@@ -16,4 +16,10 @@ export class EmployeeService extends ServiceBase<Employee> implements EmployeeSe
         this.employeeProducer.publishEmployeeCreated(created);
         return created;
     }
+
+    async update(id: number, employee: Employee) {
+        const updated = await this.repository.update(id, employee);
+        this.employeeProducer.publishEmployeeUpdated(updated);
+        return updated;
+    }
 }

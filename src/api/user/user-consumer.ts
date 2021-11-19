@@ -18,6 +18,7 @@ export class UserConsumer extends ConsumerBase implements UserConsumerInterface 
 
     subscribeToTopics(): void {
         this.notification.subscribe(EmployeeTopic.EMPLOYEE_CREATED, this.createUserWhenEmployeeIsCreated.bind(this));
+        this.notification.subscribe(EmployeeTopic.EMPLOYEE_UPDATED, this.updateUserWhenEmployeeIsUpdated.bind(this));
     }
 
     private createUserWhenEmployeeIsCreated(message: any, data: Employee): void {
@@ -27,5 +28,11 @@ export class UserConsumer extends ConsumerBase implements UserConsumerInterface 
         } as User;
 
         this.userService.create(user);
+    }
+
+    private async updateUserWhenEmployeeIsUpdated(message: any, data: Employee): Promise<void> {
+        const { id, email } = data;
+        const user = await this.userService.getByEmployeeId(id);
+        this.userService.update(user.id, { email } as User);
     }
 }

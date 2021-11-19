@@ -13,4 +13,8 @@ export class EmployeeProducer implements EmployeeProducerInterface {
     publishEmployeeCreated(employee: Employee) {
         this.notification.publish(EmployeeTopic.EMPLOYEE_CREATED, employee);
     }
+
+    publishEmployeeUpdated(employee: Employee) {
+        this.notification.publish(EmployeeTopic.EMPLOYEE_UPDATED, employee);
+    }
 }

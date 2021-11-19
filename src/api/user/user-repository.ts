@@ -20,7 +20,7 @@ export class UserRepository extends RepositoryBase<User> implements UserReposito
     }
 
     async getUsersInformation(): Promise<any[]> {
-        const users = await this.db
+        return await this.db
             .createQueryBuilder("user")
             .select("user.id", "id")
             .addSelect("user.active", "active")
@@ -34,7 +34,5 @@ export class UserRepository extends RepositoryBase<User> implements UserReposito
             .innerJoin("user.employee", "employee", "user.employeeId = employee.id")
             .leftJoin("user.userGroup", "userGroup", "user.userGroupId = userGroup.id")
             .execute();
-
-        return users;
     }
 }

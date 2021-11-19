@@ -1,6 +1,7 @@
 import { Audit } from "@api/audit/audit-entity";
 import { AuditServiceInterface } from "@api/audit/interface/audit-service-interface";
 import container from "@container";
+import { ErrorUtil } from "@util/error";
 import { RepositoryBaseInterface } from "./interface/repository-base-interface";
 import { ServiceBaseInterface } from "./interface/service-base-interface";
 
@@ -22,14 +23,20 @@ export class ServiceBase<T> implements ServiceBaseInterface<T> {
     }
 
     async getById(id: number): Promise<T> {
-        return this.repository.getById(id);
+        const data = await this.repository.getById(id);
+        if (!data) {
+            throw new ErrorUtil.DomainNotFoundError("No data found");
+        }
+        return data;
     }
 
     async update(id: number, data: T): Promise<T> {
+        await this.getById(id);
         return await this.repository.update(id, data);
     }
 
     async delete(id: number): Promise<boolean> {
+        await this.getById(id);
         return this.repository.delete(id);
     }
 
